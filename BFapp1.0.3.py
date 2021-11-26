@@ -1,4 +1,4 @@
-print ("python is good")
+print ("python is not good")
 
 
 
