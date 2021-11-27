@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.9
 COPY . /BFapp
 ADD odbcinst.ini /etc/odbcinst.ini
 RUN apt-get update
