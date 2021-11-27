@@ -1,5 +1,5 @@
-FROM python:3.9
-COPY . /BFapp
+FROM python:3.9-slim
+COPY . /bf-app
 RUN apt-get update \
  && apt-get install unixodbc -y \
  && apt-get install unixodbc-dev -y \
@@ -11,5 +11,5 @@ RUN echo "[FreeTDS]\n\
 Description = FreeTDS unixODBC Driver\n\
 Driver = /usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so\n\
 Setup = /usr/lib/x86_64-linux-gnu/odbc/libtdsS.so" >> /etc/odbcinst.ini
-RUN pip install -r BFapp/requirements.txt
-CMD python BFapp/BFapp1.0.3.py
+RUN pip install -r bf-app/requirements.txt
+CMD python bf-app/BFapp1.0.3.py
